@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>heads and tails  exercises</title>
+    </head>
+    <body>
+
+        <button onclick="
+            userMove('head');
+            ">head</button>
+        <button onclick="
+            userMove('tail');
+            ">tails</button>
+       
+        <script>
+            
+            function userMove(playerMove){
+               const computerMove = pickComputerMove ();
+                let result= '';
+
+                if (playerMove === 'head'){
+                       if (computerMove === 'head'){
+                            result = 'you win'
+                       }
+
+                       else if(computerMove === 'tail'){
+                        result = 'you lose'
+                       }
+                }
+
+                else if (playerMove === 'tail'){
+                    if (computerMove === 'head'){
+                            result = 'you lose'
+                       }
+
+                       else if(computerMove === 'tail'){
+                        result = 'you win'
+                       }
+                }
+
+
+                alert(`You chose ${playerMove}. 
+                computer chose ${computerMove}. result:${result}`)
+            };
+
+
+
+
+
+
+        function pickComputerMove(){
+          const randomNo = Math.random();
+            let computerMove = '';
+
+            if (randomNo <1/2 )
+        {
+            computerMove = 'head';
+        }
+        
+        else 
+            computerMove = 'tail';
+
+            return computerMove;
+        };
+
+
+        </script>
+    </body>
+</html>
